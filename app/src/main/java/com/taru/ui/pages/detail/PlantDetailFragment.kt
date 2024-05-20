@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.chip.ChipGroup
 import com.taru.R
 import com.taru.databinding.PlantDetailChipBinding
@@ -23,6 +25,7 @@ class PlantDetailFragment: FragmentBase(true) {
     private val args: PlantDetailFragmentArgs by navArgs()
     private val mViewModel: PlantDetailViewModel by viewModels()
     private lateinit var vBinding: PlantDetailFragmentBinding
+    private var isFavorite = false
 
 
     override fun onCreateView(
@@ -47,6 +50,22 @@ class PlantDetailFragment: FragmentBase(true) {
 //            vBinding.plantDetailImage.load(R.drawable.pic_scan_1)
         }
 
+
+        vBinding.plantLikeButton.setOnClickListener {
+
+            isFavorite = !isFavorite
+
+            if (isFavorite) {
+                vBinding.plantLikeButton.setImageResource(R.drawable.ic_favorite_filled)
+            } else {
+                vBinding.plantLikeButton.setImageResource(R.drawable.ic_favorite)
+            }
+        }
+
+        mViewModel.observeFavoriteState().observe(viewLifecycleOwner){
+            vBinding.plantLikeButton.setImageResource(if (it)R.drawable.ic_favorite_filled else R.drawable.ic_favorite)
+        }
+
     }
 
     override fun setupViewModelObservers() {
@@ -60,9 +79,8 @@ class PlantDetailFragment: FragmentBase(true) {
 
 
 
+
     private fun addChips(chipGroup: ChipGroup, keywords: List<String>){
-
-
         chipGroup.removeAllViews()
         keywords.forEach {
 

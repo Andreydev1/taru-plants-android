@@ -114,9 +114,6 @@
 
                 </LinearLayout>
 
-
-
-
                 <TextView
 
                     android:id="@+id/plant_detail_title"
@@ -131,6 +128,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/plant_detail_image_area"
                     tools:text="Radish" />
+                <ImageView
+                    android:id="@+id/plant_like_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/plant_detail_image"
+                    app:layout_constraintTop_toTopOf="@id/plant_detail_title"
+                    android:src="@drawable/ic_favorite"
+                    />
+
 
                 <TextView
 

@@ -5,7 +5,7 @@ plugins {
     id 'com.google.dagger.hilt.android'
     id 'androidx.navigation.safeargs.kotlin'
     // Make sure that you have the Google services Gradle plugin
-    id 'com.google.gms.google-services'
+   // id 'com.google.gms.google-services'
 
     // Add the Crashlytics Gradle plugin
     id 'com.google.firebase.crashlytics'
@@ -152,7 +152,5 @@ dependencies {
 
     // leaks
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
-
-
 
 }

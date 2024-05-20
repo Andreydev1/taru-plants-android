@@ -112,15 +112,16 @@
 
                 <TextView
                     android:id="@+id/nav_about_fragment_detail2"
-                    android:layout_marginTop="@dimen/dp_8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/dp_32"
+                    android:layout_marginTop="@dimen/dp_8"
                     android:text="You can find the implementation on github."
                     android:textAppearance="@style/Typo.Jl.BodyLarge"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/nav_about_fragment_detail1"/>
+                    app:layout_constraintTop_toBottomOf="@id/nav_about_fragment_detail1" />
 
                 <Button
                     android:id="@+id/button_privacy"

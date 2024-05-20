@@ -151,5 +151,11 @@
 
             />
     </fragment>
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.taru.ui.pages.favorites.FavoritesFragment"
+        android:label="Favorites Fragment"
+        tools:layout="@layout/favorites_fragment"
+        />
 
 </navigation>

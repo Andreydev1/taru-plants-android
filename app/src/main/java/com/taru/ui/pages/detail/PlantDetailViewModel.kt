@@ -2,6 +2,7 @@ package com.taru.ui.pages.detail
 
 import android.util.Log
 import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.taru.data.local.db.plant.PlantDetailRoomData
@@ -66,9 +67,12 @@ internal class PlantDetailViewModel @Inject constructor(
         }
 
     }
+
     private fun navigateToResult(images: List<String>) {
         if(images.isEmpty())return
         navManager.navigate(PlantDetailFragmentDirections.navigateToSlider(images.toTypedArray()))
     }
 
+    private val favoriteState = MutableLiveData<Boolean>()
+    fun observeFavoriteState(): LiveData<Boolean> = favoriteState
 }
